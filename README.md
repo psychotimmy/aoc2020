@@ -12,3 +12,5 @@ Day 2 - part 2 is simpler than part 1 as we don't need a loop for it! Pi4B times
 Day 3 - a small bit of refactoring for part 2 to use a function to calculate the number of trees encountered for multiple toboggan runs. Pi4B times for part 1 and part 2 identical at 0.007s.
 
 Day 4 - part 1 was fairly simple. Part 2 needed a function to apply the rules for each passport field. Slightly tricky as working out where the terminating space is for INDEX needs to take account of the position in the string of the field ... if it's the second or greater field on a line then simply doing an INDEX for the space returns the wrong (first) one! Pi4 time for part 1 0.016s, part 2 0.025s.
+
+Day 5 - a straightforward binary search problem. Pi4B times for parts 1 and 2 identical at 0.008s. There's a bit of space and time inefficiency in both solutions (e.g. we know the highest seat id that is occupied from part 1 and we can stop as soon as we have the correct seat in part 2) but for the number of seats (1,024) it's hardly worthwhile on this hardware. If I converted the code to Fortran 66 and ran it on Z80 hardware such optimisations might help a little.
