@@ -1,5 +1,5 @@
 # Advent of Code 2020
-Advent of Code 2020 in FORTRAN 77
+Advent of Code 2020 in FORTRAN 77 (mostly)
 
 Fortran 77 on RaspberryPiOS (Debian trixie)
 
@@ -16,3 +16,5 @@ Day 4 - part 1 was fairly simple. Part 2 needed a function to apply the rules fo
 Day 5 - a straightforward binary search problem. Pi4B times for parts 1 and 2 identical at 0.008s. There's a bit of space and time inefficiency in both solutions (e.g. we know the highest seat id that is occupied from part 1 and we can stop as soon as we have the correct seat in part 2) but for the number of seats (1,024) it's hardly worthwhile on this hardware. If I converted the code to Fortran 66 and ran it on Z80 hardware such optimisations might help a little.
 
 Day 6 - similar to day 4 in many ways. Part 2 could probably be coded more elegantly, but it's only 0.001s slower than part 1 on a Pi4B (0.011s for part 1, 0.012s for part 2).
+
+Day 7 - fairly nasty input to parse to produce a weighted graph / tree. Part 1 makes use of the array I created to turn node descriptions (bag colours) into node numbers to mark off the numner of uniquely seen bags. Part 2 is straightforward after solving part 1 as it makes use of the node weights (number of bags) and a slightly different function to calculate the number of bags that need to be contained by one shiny gold bag. Both parts use recursion after I decided that a stack based approach was too painful to implement on a rainy day in January, so the solution falls into f90 territory rather than pure f77. Part 1 is slightly slower at 0.048s vs Part 2 at 0.045s on a Pi4B. With the diagnostics removed these times reduce to 0.042s and 0.036s respectively.    
