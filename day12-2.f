@@ -1,0 +1,78 @@
+      PROGRAM DAY12P2
+C
+      CHARACTER*8 LINE
+      CHARACTER*1 CMD
+      COMPLEX START,FIN,WAYPOINT
+      INTEGER VALUE,FACING,MANHATTAN
+C
+   10 FORMAT(A)
+   20 FORMAT(A)
+   30 FORMAT(I4)
+   40 FORMAT(A,I6)
+   45 FORMAT(A,2G14.6)
+C
+      WRITE(*,10)"Advent of Code 2020 day 12, part 2"
+      WRITE(*,10)" "
+C
+      START=CMPLX(0,0)
+      FIN=CMPLX(0,0)
+      WAYPOINT=CMPLX(10,1)
+      OPEN(10,FILE="day12in.txt",STATUS="OLD",FORM="FORMATTED",
+     +     ACCESS="SEQUENTIAL",ACTION="READ")
+   50 CONTINUE
+      READ(10,FMT=20,ERR=100,END=100) LINE
+      CMD=LINE(1:1)
+      READ(LINE(2:),30) VALUE
+      CALL DOCOMMAND(CMD,VALUE,START,FIN,WAYPOINT)
+      START=FIN
+      GOTO 50
+  100 CONTINUE
+      CLOSE(10)
+C     WRITE(*,45)"Ended at ",START
+      WRITE(*,40)"Manhattan distance from starting position is"
+     +            ,MANHATTAN(CMPLX(0,0),START)
+      END
+C
+      SUBROUTINE DOCOMMAND(CMD,VALUE,S,F,WP)
+      CHARACTER*1 CMD
+      INTEGER VALUE
+      COMPLEX S,F,WP
+C
+   10 FORMAT(3A)
+C
+      IF (CMD.EQ.'N') THEN
+        WP=WP+CMPLX(0,VALUE)
+      ELSE IF (CMD.EQ.'S') THEN
+        WP=WP-CMPLX(0,VALUE)
+      ELSE IF (CMD.EQ.'E') THEN
+        WP=WP+CMPLX(VALUE,0)
+      ELSE IF (CMD.EQ.'W') THEN
+        WP=WP-CMPLX(VALUE,0)
+      ELSE IF (CMD.EQ.'L') THEN
+        IF (VALUE.EQ.90) WP=CMPLX(-IMAG(WP),INT(WP))
+        IF (VALUE.EQ.180) WP=CMPLX(-INT(WP),-IMAG(WP))
+        IF (VALUE.EQ.270) WP=CMPLX(IMAG(WP),-INT(WP))
+      ELSE IF (CMD.EQ.'R') THEN
+        IF (VALUE.EQ.90) WP=CMPLX(IMAG(WP),-INT(WP))
+        IF (VALUE.EQ.180) WP=CMPLX(-INT(WP),-IMAG(WP))
+        IF (VALUE.EQ.270) WP=CMPLX(-IMAG(WP),INT(WP))
+      ELSE IF (CMD.EQ.'F') THEN
+        F=S+VALUE*WP
+      ELSE
+        WRITE(*,10)"Unrecognised command ",CMD," stopping!"
+        STOP 8
+      ENDIF
+C
+      RETURN
+      END
+C
+      INTEGER FUNCTION MANHATTAN(P1,P2)
+      COMPLEX P1,P2
+C
+      INTEGER I,J
+C
+      I=ABS(INT(P1)-INT(P2))
+      J=ABS(IMAG(P1)-IMAG(P2))
+      MANHATTAN=I+J
+      RETURN
+      END
