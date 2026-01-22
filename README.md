@@ -1,5 +1,5 @@
 # Advent of Code 2020
-Advent of Code 2020 in FORTRAN 77 (mostly)## Notes
+Advent of Code 2020 in FORTRAN 77 (mostly)
 
 Fortran 77 on RaspberryPiOS (Debian trixie)
 
