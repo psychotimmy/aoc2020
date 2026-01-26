@@ -41,5 +41,5 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 17** A 3D and 4D implementation of Conway's Life. "I know this game!". Part 1 runs in 0.03s, part 2 in 0.46s. By reducing the grids to their absolute minimum size and further optimising the counting mechanism I could probably squeeze some extra performance out of the Pi4B, but using 50x50x50(x50) grids is plenty fast enough. For comparison, part 1 with a 500x500x500 grid takes 1.55s to run; part 2 with an extra x500 breaks the linker!
 
-**Day 18** Implementing a calculator with peculair precedence rules. A recursive solution would be easier to write (and probably to read), but as I'm trying to stick within standard Fortran 77 this is an iterative solution. Part 1 is reasonably elegant, part 2 less so. Both are fast - the Pi4B needs 0.01s for part 1 and 0.011s for part 2.
+**Day 18** Implementing a calculator with peculiar precedence rules. A recursive solution would be easier to write (and probably to read), but as I'm trying to stick within standard Fortran 77 this is an iterative solution. Part 1 is reasonably elegant, part 2 less so. Both are fast - the Pi4B needs 0.01s for part 1 and 0.011s for part 2.
 
