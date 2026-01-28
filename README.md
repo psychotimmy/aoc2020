@@ -43,3 +43,16 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 18** Implementing a calculator with peculiar precedence rules. A recursive solution would be easier to write (and probably to read), but as I'm trying to stick within standard Fortran 77 this is an iterative solution. Part 1 is reasonably elegant, part 2 less so. Both are fast - the Pi4B needs 0.01s for part 1 and 0.011s for part 2.
 
+**Day 19** To do.
+
+**Day 20** To do.
+
+**Day 21** To do.
+
+**Day 22** Part 1 is straightforward - takes 0.008s to play a game of Combat on the Pi4B. Part 2 to do.
+
+**Day 23** To do.
+
+**Day 24** To do.
+
+**Day 25** To do.
