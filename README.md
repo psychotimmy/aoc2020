@@ -51,7 +51,7 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 22** Part 1 is straightforward - takes 0.008s to play a game of Combat on the Pi4B. Part 2 to do.
 
-**Day 23** Part 1 requires the manipulation of a circular buffer holding 9 items. Not conceptually difficult but incredibly fiddly to get right. Solution is probably sub-optimal but eventually I got it to work. The Pi4B executes it in 0.006s. Part 2 to do.
+**Day 23** Part 1 requires the manipulation of a circular buffer holding 9 items. Not conceptually difficult but incredibly fiddly to get right. Solution is probably sub-optimal but eventually I got it to work. The Pi4B executes it in 0.006s. Part 2 really needs re-writing to move pointers around rather than values (it would be much,much faster), but a trial run of simply extending part 1, making a couple of minor optimisations to two of the loops and using the '-O3' compilation flag suggested to me that it would run overnight on a Pi5. It does, taking a mere 8 hours, 18 minutes, 49.673 seconds to complete, suggesting a time of around 24 hours for a Pi4B.
 
 **Day 24** To do.
 
