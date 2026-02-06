@@ -47,7 +47,7 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 20** To do.
 
-**Day 21** To do.
+**Day 21** This puzzle was a bit of a grind as Fortran77 has neither sets nor especially good string handling capabilities. That said, the part 2 answer was straightforward to derive from my part 1 implementation, so much so that part 2 also answers part 1 with just a minor change made to the order in which the allergens are returned from my IDENTIFYALLERGENS subroutine. The combined solution runs in 0.03s on the Pi4B. I've left my debugging code in (but commented out) as the variable names I've used aren't great! Part 2 required some sorting, but as it was only 8 items I've used my insertion sort routine rather than heapsort, as it's around half the number of lines of code.
 
 **Day 22** Part 1 is straightforward - takes 0.008s to play a game of Combat on the Pi4B. Part 2 is Recursive Combat - so I took the hint and used recursion! The code is more long-winded than it needs to be (a couple of duplicate sections should be turned into functions) but it runs in 2.95s on the Pi4B. Hardest bit of part two was understanding the instructions - must have been really difficult for those who don't have English as a first language.
 
