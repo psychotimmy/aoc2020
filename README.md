@@ -55,4 +55,4 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 24** A problem involving a hexagonal grid of tiles which is straightforward provided that an appropriate data representation is used, such as HECS (hexagonal efficient co-ordinate system). Part 1 runs in 0.01s, part 2 (a hexagonal variant of Conway's Life) calculates part 1 and part 2 in 2.0s on the Pi4B.
 
-**Day 25** To do.
+**Day 25** A straightforward end to the puzzles, provided that you don't execute the TRANSFORM loop more often than is required! The solution calculates the encryption key twice to cross-check, but this isn't strictly necessary. 0.28s execution time on the Pi4B.
