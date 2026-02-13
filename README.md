@@ -43,7 +43,7 @@ Use (with gfortran installed) f77 filename.f -o filename to compile and link.
 
 **Day 18** Implementing a calculator with peculiar precedence rules. A recursive solution would be easier to write (and probably to read), but as I'm trying to stick within standard Fortran 77 this is an iterative solution. Part 1 is reasonably elegant, part 2 less so. Both are fast - the Pi4B needs 0.01s for part 1 and 0.011s for part 2.
 
-**Day 19** Parsing a context free grammar. String handling isn't much fun in Fortran 77, but this example isn't too bad due to the regularity of the rule layout, so I can get away with a number of liberties that make the code resonably compact. Recursion is a must, so I've strayed into the Fortran 90 standard again. Part 1 completes in 0.17s on the Pi4B.
+**Day 19** Parsing a context free grammar. String handling isn't much fun in Fortran 77, but this example isn't too bad due to the regularity of the rule layout, so I got away with a number of liberties that makes the code resonably compact. Recursion is a must, so I've strayed into the Fortran 90 standard again. Part 1 completes in 0.17s on the Pi4B. Part 2 was solved using the new sample input and some diagnostics to figure out the couple of additional special cases that needed handling - i.e. if the end of a message is exceeded with rules left to parse then it's invalid, unless the only rule left is 31 and is part of an 'or' rule (i.e. on the RHS after a '|' ). Looks kludgy, but the puzzle statement points out that solving for arbitrary looping rules is 'very difficult' (!). With the diagnostic WRITE statements commented out part 2 runs in 0.35s.
 
 **Day 20** To do.
 
